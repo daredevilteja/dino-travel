@@ -1,11 +1,11 @@
-import './App.css';
+import { useState } from "react";
+import Login from "../Login";
+import SignUp from "../SignUp";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-
-    </div>
-  );
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  return <div className="App">{isLoggedIn ? <Login /> : <SignUp />}</div>;
 }
 
 export default App;
