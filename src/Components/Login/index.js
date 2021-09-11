@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Input, Button, Checkbox, Space } from "antd";
+import { Form, Input, Button, Space } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import SignUp from "../SignUp";
 import "./styles.css";
@@ -43,13 +43,14 @@ export default function Login(props) {
           rules={[
             {
               required: true,
-              message: "Please input your Username!",
+              message: "Please input your Email!",
             },
           ]}
         >
           <Input
             prefix={<UserOutlined className="site-form-item-icon" />}
-            placeholder="Username"
+            type={"email"}
+            placeholder="Email"
           />
         </Form.Item>
         <Form.Item
@@ -66,13 +67,6 @@ export default function Login(props) {
             type="password"
             placeholder="Password"
           />
-        </Form.Item>
-        <Form.Item>
-          <Form.Item name="remember" valuePropName="checked" noStyle>
-            <Checkbox>Remember me</Checkbox>
-          </Form.Item>
-
-          {/*<a className="login-form-forgot">Forgot password</a>*/}
         </Form.Item>
 
         <Form.Item>

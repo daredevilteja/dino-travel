@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Layout, Menu } from "antd";
+import { Breadcrumb, Button, Layout, Menu } from "antd";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "antd/dist/antd.css";
 import "./styles.css";
@@ -33,6 +33,7 @@ export default function Home(props) {
           </Menu>
         </Header>
         <Content style={{ padding: "0 50px" }}>
+          <Breadcrumb style={{ margin: "16px 0" }}></Breadcrumb>
           <div className="site-layout-content">
             <Switch>
               <Route path="/profile">
