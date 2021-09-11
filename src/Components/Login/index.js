@@ -27,7 +27,7 @@ export default function Login(props) {
 
   return (
     <div
-      style={{ width: `${window.innerWidth}`, height: `${window.innerHeight}` }}
+      
       className={"login-container"}
     >
       <Form
