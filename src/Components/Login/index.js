@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Input, Button, Checkbox } from "antd";
+import { Form, Input, Button, Checkbox, Space } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import SignUp from "../SignUp";
 import "./styles.css";
@@ -72,18 +72,24 @@ export default function Login(props) {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button">
-          Log in
-        </Button>
-        <Button
-          type="primary"
-          className="login-form-button"
-          onClick={() => {
-            setVisible(true);
-          }}
-        >
-          SignUp
-        </Button>
+        <Space direction={"horizontal"}>
+          <Button
+            type="primary"
+            htmlType="submit"
+            className="login-form-button"
+          >
+            Log in
+          </Button>
+          <Button
+            type="primary"
+            className="login-form-button"
+            onClick={() => {
+              setVisible(true);
+            }}
+          >
+            SignUp
+          </Button>
+        </Space>
         <SignUp
           visible={visible}
           onCreate={onCreate}
