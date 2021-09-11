@@ -16,6 +16,6 @@
   width: 100%;
 }
 
-body {
+.login-container {
   background-image: url("./background.png");
 }

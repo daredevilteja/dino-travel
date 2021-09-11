@@ -26,78 +26,83 @@ export default function Login(props) {
   };
 
   return (
-    <Form
-      name="normal_login"
-      className="login-form"
-      initialValues={{
-        remember: true,
-      }}
-      onFinish={onFinish}
+    <div
+      style={{ width: `${window.innerWidth}`, height: `${window.innerHeight}` }}
+      className={"login-container"}
     >
-      <Form.Item
-        name="username"
-        rules={[
-          {
-            required: true,
-            message: "Please input your Username!",
-          },
-        ]}
+      <Form
+        name="normal_login"
+        className="login-form"
+        initialValues={{
+          remember: true,
+        }}
+        onFinish={onFinish}
       >
-        <Input
-          prefix={<UserOutlined className="site-form-item-icon" />}
-          placeholder="Username"
-        />
-      </Form.Item>
-      <Form.Item
-        name="password"
-        rules={[
-          {
-            required: true,
-            message: "Please input your Password!",
-          },
-        ]}
-      >
-        <Input
-          prefix={<LockOutlined className="site-form-item-icon" />}
-          type="password"
-          placeholder="Password"
-        />
-      </Form.Item>
-      <Form.Item>
-        <Form.Item name="remember" valuePropName="checked" noStyle>
-          <Checkbox>Remember me</Checkbox>
+        <Form.Item
+          name="username"
+          rules={[
+            {
+              required: true,
+              message: "Please input your Username!",
+            },
+          ]}
+        >
+          <Input
+            prefix={<UserOutlined className="site-form-item-icon" />}
+            placeholder="Username"
+          />
+        </Form.Item>
+        <Form.Item
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: "Please input your Password!",
+            },
+          ]}
+        >
+          <Input
+            prefix={<LockOutlined className="site-form-item-icon" />}
+            type="password"
+            placeholder="Password"
+          />
+        </Form.Item>
+        <Form.Item>
+          <Form.Item name="remember" valuePropName="checked" noStyle>
+            <Checkbox>Remember me</Checkbox>
+          </Form.Item>
+
+          {/*<a className="login-form-forgot">Forgot password</a>*/}
         </Form.Item>
 
-        {/*<a className="login-form-forgot">Forgot password</a>*/}
-      </Form.Item>
-
-      <Form.Item>
-        <Space direction={"horizontal"}>
-          <Button
-            type="primary"
-            htmlType="submit"
-            className="login-form-button"
-          >
-            Log in
-          </Button>
-          <Button
-            type="primary"
-            className="login-form-button"
-            onClick={() => {
-              setVisible(true);
+        <Form.Item>
+          <Space direction={"horizontal"}>
+            <Button
+              type="primary"
+              htmlType="submit"
+              className="login-form-button"
+            >
+              Log in
+            </Button>
+            <Button
+              type="primary"
+              className="login-form-button"
+              onClick={() => {
+                setVisible(true);
+              }}
+            >
+              SignUp
+            </Button>
+          </Space>
+          <SignUp
+            visible={visible}
+            onCreate={onCreate}
+            onCancel={() => {
+              setVisible(false);
             }}
-          >
-            SignUp
-          </Button>
-        </Space>
-        <SignUp
-          visible={visible}
-          onCreate={onCreate}
-          onCancel={() => {
-            setVisible(false);
-          }}
-        />
-      </Form.Item>
-    </Form>
+          />
+        </Form.Item>
+      </Form>
+    </div>
   );
 }
