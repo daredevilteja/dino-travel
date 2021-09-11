@@ -8,11 +8,21 @@ export default function Login(props) {
   const [visible, setVisible] = useState(false);
 
   const onCreate = (values) => {
-    console.log("Received values of form: ", values);
+    const newUser = {
+      userName: values.username,
+      email: values.email,
+      dob: values.dob,
+      password: values.password,
+      sex: values.gender,
+      country: values.country,
+      phNum: values.phone ? Number(values.phone) : null,
+    };
+
+    props.signupHandler(newUser);
     setVisible(false);
   };
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+    props.loginHandler(values.username, values.password);
   };
 
   return (
@@ -62,14 +72,7 @@ export default function Login(props) {
       </Form.Item>
 
       <Form.Item>
-        <Button
-          type="primary"
-          htmlType="submit"
-          className="login-form-button"
-          onClick={() => {
-            props.setIsLoggedIn(false);
-          }}
-        >
+        <Button type="primary" htmlType="submit" className="login-form-button">
           Log in
         </Button>
         <Button

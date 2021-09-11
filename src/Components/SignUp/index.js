@@ -54,7 +54,7 @@ export default function SignUp({ visible, onCreate, onCancel }) {
   return (
     <Modal
       visible={visible}
-      title="Create a new collection"
+      title="Register a New User"
       okText="Create"
       cancelText="Cancel"
       onCancel={onCancel}
@@ -137,8 +137,8 @@ export default function SignUp({ visible, onCreate, onCancel }) {
         </Form.Item>
 
         <Form.Item
-          name="nickname"
-          label="Nickname"
+          name="username"
+          label="Username"
           tooltip="What do you want others to call you?"
           rules={[
             {
@@ -152,12 +152,12 @@ export default function SignUp({ visible, onCreate, onCancel }) {
         </Form.Item>
 
         <Form.Item
-          name="Address"
-          label="Address"
+          name="country"
+          label="Country"
           rules={[
             {
-              required: true,
-              message: "Please select your habitual residence!",
+              required: false,
+              message: "Please select your Country of residence!",
               whitespace: true,
             },
           ]}
@@ -166,11 +166,26 @@ export default function SignUp({ visible, onCreate, onCancel }) {
         </Form.Item>
 
         <Form.Item
+          name="dob"
+          label="Date of Birth"
+          rules={[
+            {
+              type: "date",
+              required: true,
+              message: "Please select your Date of Birth!",
+              whitespace: true,
+            },
+          ]}
+        >
+          <Input type={"date"} />
+        </Form.Item>
+
+        <Form.Item
           name="phone"
           label="Phone Number"
           rules={[
             {
-              required: true,
+              required: false,
               message: "Please input your phone number!",
             },
           ]}
@@ -188,7 +203,7 @@ export default function SignUp({ visible, onCreate, onCancel }) {
           label="Gender"
           rules={[
             {
-              required: true,
+              required: false,
               message: "Please select gender!",
             },
           ]}
