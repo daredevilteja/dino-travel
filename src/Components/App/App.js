@@ -117,9 +117,6 @@ function App() {
         <Home username={userName} logoutHandler={logoutHandler} />
       )}
     </div>
-    // <div className="App">
-    //   {!isLoggedIn ? <Login setIsLoggedIn={setIsLoggedIn} /> : <Home />}
-    // </div>
   );
 }
 
