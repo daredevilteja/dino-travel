@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Menu } from "antd";
+import { Button, Layout, Menu } from "antd";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "antd/dist/antd.css";
 import "./styles.css";
@@ -26,6 +26,7 @@ export default function Home() {
               <Link to="/profile">Profile</Link>
             </Menu.Item>
           </Menu>
+          <Button ghost>Logout</Button>
         </Header>
         <Content style={{ padding: "0 50px" }}>
           <div className="site-layout-content">
