@@ -1,7 +1,16 @@
 @import "~antd/dist/antd.css";
 
+body{
+  background-image: url("background.png");
+}
+
 .login-form {
-  max-width: 300px;
+  max-width: 400px;
+  max-height: 800px;
+  margin-top: 300px;
+  margin-bottom: 100px;
+  margin-left: 100px;
+  background-image: url("map.jpg");
 }
 
 .login-form-forgot {
@@ -13,9 +22,10 @@
 }
 
 .login-form-button {
+  margin-bottom: 40px;
+  font-weight: 500;
+  margin-left: 50px;
+  font-size:large ;
   width: 100%;
-}
-
-.login-container {
-  background-image: url("./background.png");
+  height: 40px;
 }
