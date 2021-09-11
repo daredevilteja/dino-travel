@@ -5,7 +5,7 @@ import "antd/dist/antd.css";
 import "./styles.css";
 import Demo from "../Demo";
 import MyTravels from "../MyTravels";
-import About from "../About";
+import Profile from "../Profile";
 
 const { Header, Content, Footer } = Layout;
 
@@ -23,15 +23,15 @@ export default function Home() {
               <Link to="/myTravels">My Travels</Link>
             </Menu.Item>
             <Menu.Item>
-              <Link to="/about">About</Link>
+              <Link to="/profile">Profile</Link>
             </Menu.Item>
           </Menu>
         </Header>
         <Content style={{ padding: "0 50px" }}>
           <div className="site-layout-content">
             <Switch>
-              <Route path="/about">
-                <About />
+              <Route path="/profile">
+                <Profile />
               </Route>
               <Route path="/myTravels">
                 <MyTravels />
