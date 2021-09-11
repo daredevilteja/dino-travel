@@ -9,7 +9,7 @@ import Profile from "../Profile";
 
 const { Header, Content, Footer } = Layout;
 
-export default function Home() {
+export default function Home(props) {
   return (
     <Router>
       <Layout className="layout">
@@ -25,8 +25,12 @@ export default function Home() {
             <Menu.Item>
               <Link to="/profile">Profile</Link>
             </Menu.Item>
+            <Menu.Item>
+              <Button ghost onClick={props.logoutHandler}>
+                Logout
+              </Button>
+            </Menu.Item>
           </Menu>
-          <Button ghost>Logout</Button>
         </Header>
         <Content style={{ padding: "0 50px" }}>
           <div className="site-layout-content">
