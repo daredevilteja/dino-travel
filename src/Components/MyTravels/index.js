@@ -3,6 +3,6 @@ import "antd/dist/antd.css";
 
 export default function MyTravels(){
     return (
-        <div>MyTravels</div>
+        <div><h1>MyTravels</h1></div>
     );
 }
