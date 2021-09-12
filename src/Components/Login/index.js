@@ -26,10 +26,7 @@ export default function Login(props) {
   };
 
   return (
-    <div
-      
-      className={"login-container"}
-    >
+    <div className={"login-container"}>
       <Form
         name="normal_login"
         className="login-form"

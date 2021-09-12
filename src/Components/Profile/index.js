@@ -11,7 +11,7 @@ export default function Profile() {
   const [phnum, setPhnum] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:9999/profile", {
+    fetch("https://dino-travel-be.herokuapp.com/profile", {
       method: "GET",
       credentials: "include",
     })
@@ -40,7 +40,7 @@ export default function Profile() {
       }
     });
 
-    await fetch("http://localhost:9999/profile", {
+    await fetch("https://dino-travel-be.herokuapp.com/profile", {
       method: "PUT",
       body: JSON.stringify({
         userName: e.target[0].value ? e.target[0].value : username,

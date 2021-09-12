@@ -102,7 +102,7 @@ export default function Demo() {
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
     e.endTime = today.toUTCString();
-    fetch("http://localhost:9999/myTravels", {
+    fetch("https://dino-travel-be.herokuapp.com/myTravels", {
       method: "POST",
       body: JSON.stringify(e),
       headers: {
