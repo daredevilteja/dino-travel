@@ -5,8 +5,15 @@
   width: 50vw;
   height: 40vh;
   font-weight: bold;
+  font-size: x-large;
   justify-content: center;
   box-shadow: 0 4px 8px 0 rgba(3, 3, 3, 0.2);
-  border-radius: 3vmax;
+  border-radius: 2vmax;
+}
+.dino-cont {
+
+  background-color: azure;
+  height: 999;
+
 }
 
