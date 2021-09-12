@@ -1,13 +1,17 @@
 .site-layout-content {
-    min-height: 280px;
-    padding: 24px;
-    background: #fff;
+    min-height: 680px;
+    padding: 29px;
+    font-weight: bold;
+    font-size: large;
+    background: rgb(165, 233, 253);
 }
 
 .logo {
     float: left;
     width: 120px;
-    height: 31px;
+    height: 40px;
+    font-size: large;
+    font-weight: bold;
     margin: 16px 24px 16px 0;
     background: rgba(255, 255, 255, 0.3);
 }
@@ -18,5 +22,5 @@
 }
 
 [data-theme="dark"] .site-layout-content {
-    background: #141414;
+    background: #401775;
 }
