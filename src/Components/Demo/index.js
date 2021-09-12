@@ -77,15 +77,22 @@ export default function Demo() {
   const [data, setData] = useState([]);
 
   const onFinish = (values) => {
-    console.log("Received values of form: ", values);
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
+    console.log(data.length)
     const newObj = {
+      key:
+        data[data.length] !== undefined
+          ? data[data.length].key !== undefined
+            ? Number(data[data.length].key) + 1
+            : 1
+          : 1,
       startPoint: values.startPoint,
       destination: values.endPoint,
       dino: values.dino,
       startTime: today.toUTCString(),
     };
+    console.log(newObj);
     setDataObj({ ...newObj });
     data.push(newObj);
     setData([...data]);
