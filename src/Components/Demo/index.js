@@ -65,8 +65,10 @@ export default function Demo() {
       key: "action",
       render: (text, record) => (
         <Space size="middle">
-          <Button>Finish</Button>
-          <Button danger>Cancel</Button>
+          <Button onClick={() => completeRide(record)}>Finish</Button>
+          <Button danger onClick={() => cancelRide(record)}>
+            Cancel
+          </Button>
         </Space>
       ),
     },
@@ -80,7 +82,7 @@ export default function Demo() {
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
     const newObj = {
-      key: data[data.length - 1] ? (Number(data[data.length - 1].key) + 1) : 1,
+      key: data[data.length - 1] ? Number(data[data.length - 1].key) + 1 : 1,
       startPoint: values.startPoint,
       destination: values.endPoint,
       dino: values.dino,
@@ -89,6 +91,26 @@ export default function Demo() {
     setDataObj({ ...newObj });
     data.push(newObj);
     setData([...data]);
+  };
+
+  const cancelRide = (e) => {
+    deleteElement(e);
+  };
+
+  const completeRide = (e) => {
+    deleteElement(e);
+  };
+
+  const deleteElement = (e) => {
+    data.every((val, idx) => {
+      if (e.key === val.key) {
+        data.splice(idx, 1);
+        setDataObj({});
+        setData([...data]);
+        return false;
+      }
+      return true;
+    });
   };
 
   return (
