@@ -99,6 +99,17 @@ export default function Demo() {
 
   const completeRide = (e) => {
     deleteElement(e);
+    const timeElapsed = Date.now();
+    const today = new Date(timeElapsed);
+    e.endTime = today.toUTCString();
+    fetch("http://localhost:9999/myTravels", {
+      method: "POST",
+      body: JSON.stringify(e),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+    }).catch((e) => console.log(e));
   };
 
   const deleteElement = (e) => {
