@@ -3,24 +3,26 @@
     padding: 36px;
     font-weight: bold;
     font-size: large;
-    background: rgb(165, 233, 253);
+    background-image: url("dinomap.jpg");
 }
 
 .logo {
-    float: left;
-    width: 120px;
+    float: right;
+    width: 100px;
     height: 40px;
     font-size: large;
     font-weight: bold;
-    margin: 16px 24px 16px 0;
-    background: rgba(255, 255, 255, 0.3);
+    margin: 16px 14px 10px 0;
+    
 }
 
 .ant-row-rtl .logo {
+    
     float: right;
     margin: 16px 0 16px 24px;
 }
 
 [data-theme="dark"] .site-layout-content {
-    background: #401775;
+    background: #852afd;
+    
 }
