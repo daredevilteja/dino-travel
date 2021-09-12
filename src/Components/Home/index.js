@@ -32,8 +32,8 @@ export default function Home(props) {
             </Menu.Item>
           </Menu>
         </Header>
-        <Content style={{ padding: "0 50px" }}>
-          <Breadcrumb style={{ margin: "16px 0" }}></Breadcrumb>
+        <Content style={{ padding: "0 150px" }}>
+          <Breadcrumb style={{ margin: "50px 0" }}></Breadcrumb>
           <div className="site-layout-content">
             <Switch>
               <Route path="/profile">
