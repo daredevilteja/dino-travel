@@ -9,7 +9,7 @@ function App() {
   const [userName, setUserName] = useState(undefined);
 
   const getUserName = () => {
-    return fetch(`https://dino-travel-be.herokuapp.com/userInfo`, {
+    return fetch(`http://localhost:9999/userInfo`, {
       credentials: "include",
     })
       .then((r) => {
@@ -34,7 +34,7 @@ function App() {
   }, []);
 
   const signupHandler = (user) => {
-    fetch("https://dino-travel-be.herokuapp.com/signup", {
+    fetch("http://localhost:9999/signup", {
       method: "POST",
       body: JSON.stringify({
         userName: user.userName,
@@ -67,11 +67,11 @@ function App() {
   };
 
   const loginHandler = (userName, password) => {
-    login("https://dino-travel-be.herokuapp.com/login", userName, password);
+    login("http://localhost:9999/login", userName, password);
   };
 
   const logoutHandler = () => {
-    return fetch("https://dino-travel-be.herokuapp.com/logout", {
+    return fetch("http://localhost:9999/logout", {
       credentials: "include",
     }).then((r) => {
       if (r.ok) {

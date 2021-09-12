@@ -36,7 +36,7 @@ export default function MyTravels() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("https://dino-travel-be.herokuapp.com/myTravels", {
+    fetch("http://localhost:9999/myTravels", {
       method: "GET",
       credentials: "include",
     })
