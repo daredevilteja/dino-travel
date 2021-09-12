@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Select, Button, Typography } from "antd";
-import { Table, Tag, Space } from 'antd';
+import { Table, Space } from "antd";
 import "antd/dist/antd.css";
 import "./styles.css";
 
@@ -39,17 +39,63 @@ const tailFormItemLayout = {
 };
 
 export default function Demo() {
+  const columns = [
+    {
+      title: "Start Location",
+      dataIndex: "startPoint",
+      key: "start",
+    },
+    {
+      title: "Destination",
+      dataIndex: "destination",
+      key: "destination",
+    },
+    {
+      title: "Dino",
+      dataIndex: "dino",
+      key: "dino",
+    },
+    {
+      title: "Start Time",
+      key: "startTime",
+      dataIndex: "startTime",
+    },
+    {
+      title: "Action",
+      key: "action",
+      render: (text, record) => (
+        <Space size="middle">
+          <Button>Finish</Button>
+          <Button danger>Cancel</Button>
+        </Space>
+      ),
+    },
+  ];
+
   const [form] = Form.useForm();
+  const [dataObj, setDataObj] = useState({});
+  const [data, setData] = useState([]);
 
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
+    const timeElapsed = Date.now();
+    const today = new Date(timeElapsed);
+    const newObj = {
+      startPoint: values.startPoint,
+      destination: values.endPoint,
+      dino: values.dino,
+      startTime: today.toUTCString(),
+    };
+    setDataObj({ ...newObj });
+    data.push(newObj);
+    setData([...data]);
   };
 
   return (
     <>
       <div
         style={{
-          width: 90 + "vw",
+          width: 80 + "vw",
           justifyContent: "center",
           display: "flex",
         }}
@@ -105,6 +151,24 @@ export default function Demo() {
               </Select>
             </Form.Item>
 
+            <Form.Item
+              name="dino"
+              label="Pick your Dino"
+              rules={[
+                {
+                  required: true,
+                  message: "Please select your dino for the ride!",
+                },
+              ]}
+            >
+              <Select placeholder="select your dino">
+                <Option value="tRex">T-Rex</Option>
+                <Option value="ankylosauras">Ankylosauras</Option>
+                <Option value="brachiosaurus">Brachiosaurus</Option>
+                <Option value="pterosaur">Pterosaur(flying)</Option>
+              </Select>
+            </Form.Item>
+
             <Form.Item {...tailFormItemLayout}>
               <Button type="primary" htmlType="submit">
                 Book
@@ -120,64 +184,3 @@ export default function Demo() {
     </>
   );
 }
-
-
-
-const columns = [
-  {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-  },
-  {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
-  },
-  {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
-  },
-  {
-    title: 'Tags',
-    key: 'tags',
-    dataIndex: 'tags',
-
-  },
-  {
-    title: 'Action',
-    key: 'action',
-    render: (text, record) => (
-        <Space size="middle">
-          <a>Invite {record.name}</a>
-          <a>Delete</a>
-        </Space>
-    ),
-  },
-];
-
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-];
-
